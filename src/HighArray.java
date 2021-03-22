@@ -9,6 +9,9 @@
 
     Exercise 2.3: Using only the main in the HighArrayMap, create a second array and inversely
     sort it.
+
+    Exercise 2.6: Write a noDups() method for the HighArray class. This method should remove all the duplicates
+    from the array. That is, if there is three items with the key 17, noDups should remove two of them.
  */
 
 public class HighArray {
@@ -25,6 +28,21 @@ public class HighArray {
         return nElems;
     }
 
+    /**
+     * This function is for Exercise 2.6 of the textbook, it removes any and all duplications
+     * in the array so that only a single value remains.
+     */
+    public void noDupes()
+    {
+        long searchFor = a[0];
+        for(int i = 1; i < nElems; i++)
+        {
+            while((find(searchFor) == true))
+                delete(searchFor);
+            insert(searchFor);
+        }
+    }
+
     // find a specific value
     public boolean find(long searchKey) {
         int i;              // search index
@@ -33,7 +51,7 @@ public class HighArray {
                 break;      // found item
             }
         }
-        return i != nElems; // false if i == nElems, false otherwise
+        return i != nElems; // false if i == nElems, true otherwise
     }
 
     // put element into array
@@ -109,9 +127,21 @@ class HighArrayApp {
         HighArray arr;
         arr = new HighArray(maxSize);
 
+        arr.insert(0);
+        arr.insert(1);
+        arr.insert(3);
+        arr.insert(0);
+        arr.insert(0);
+        arr.insert(4);
+        arr.insert(0);
+        arr.display();
+        arr.noDupes();
+        System.out.println("After arr.noDupes");
+        arr.display();
+
         /*System.out.println("Trying to delete an invalid value: " + arr.delete(0));
         System.out.println("Trying to use getMax() on an empty array: " + arr.getMax());
-        System.out.println("Trying to use removeMax() on an empty array: " + arr.removeMax() + "\n");*/
+        System.out.println("Trying to use removeMax() on an empty array: " + arr.removeMax() + "\n");
 
 
         arr.insert(77);
@@ -138,7 +168,7 @@ class HighArrayApp {
             arr2.insert(arr.getMax());
             arr.removeMax();
         }
-        arr2.display();
+        arr2.display(); */
 
 
         /*
