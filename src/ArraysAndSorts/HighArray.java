@@ -1,4 +1,4 @@
-/* We will demonstrate exercises 2.1-2.3 in this class.
+package ArraysAndSorts;/* We will demonstrate exercises 2.1-2.3 in this class.
 
     Exercise 2.1: Add a method called getMax() that returns the value of the highest
     key in the array or -1 if the array is empty. Assume all key's are positive numbers.
@@ -10,7 +10,7 @@
     Exercise 2.3: Using only the main in the HighArrayMap, create a second array and inversely
     sort it.
 
-    Exercise 2.6: Write a noDups() method for the HighArray class. This method should remove all the duplicates
+    Exercise 2.6: Write a noDups() method for the ArraysAndSorts.HighArray class. This method should remove all the duplicates
     from the array. That is, if there is three items with the key 17, noDups should remove two of them.
  */
 
@@ -119,7 +119,7 @@ public class HighArray {
     }
 
 }
-// for testing HighArrayApp
+// for testing ArraysAndSorts.HighArrayApp
 class HighArrayApp {
     public static void main(String[] args)
     {
@@ -160,8 +160,8 @@ class HighArrayApp {
         // WE MUST CREATE AN INVERSELY SORTED NEW ARRAY ONLY USING CODE IN MAIN
         // *****************************************************************
         int maxSize2 = 100;
-        HighArray arr2;
-        arr2 = new HighArray(maxSize);
+        ArraysAndSorts.HighArray arr2;
+        arr2 = new ArraysAndSorts.HighArray(maxSize);
         int numberOfElements = arr.getnElems();
         for(int i = 0; i < numberOfElements; i++)
         {

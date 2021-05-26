@@ -1,4 +1,4 @@
-/*
+package ArraysAndSorts;/*
     Exercise 3.1:
         In the bubblesort() the in index always goes from left to right, finding the largest item and carrying
         it toward out on the right. Modify the bubbleSort() method so that it's bidirectional. This means the in

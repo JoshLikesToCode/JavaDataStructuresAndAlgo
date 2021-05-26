@@ -1,6 +1,6 @@
-/*
+package ArraysAndSorts;/*
     Exercise 3.2:
-        Add a method called median() to the ArrayIns class. This method should return the median value in the array.
+        Add a method called median() to the ArraysAndSorts.ArrayIns class. This method should return the median value in the array.
         Recall that in a group of numbers, half are larger than the median and half are smaller.) Do it the easy way.
 
     Exercise 3.3:

@@ -1,3 +1,5 @@
+package ArraysAndSorts;
+
 /********************************************
  * Programming Projects 2.4 - 2.5
  *
