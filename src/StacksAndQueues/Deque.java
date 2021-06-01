@@ -34,6 +34,7 @@ public class Deque {
             left = 0;
             right = 0;
         }
+        // handle wrap around
         else if(left == 0)
             left = maxSize - 1;
         else
@@ -57,6 +58,7 @@ public class Deque {
             left = 0;
             right = 0;
         }
+        // handle wrap around
         else if(right == maxSize - 1)
             right = 0;
         else
@@ -109,12 +111,52 @@ public class Deque {
 
    public void display()
     {
-        System.out.print("Queue currently holds = ");
+        System.out.print("Dequeue currently holds = ");
         for(int i = left; i <= right; i++)
         {
             System.out.print(deqArr[i] + " ");
         }
         System.out.println("");
+    }
+
+    public int getLeft() {
+        return left;
+    }
+
+    public void setLeft(int left) {
+        this.left = left;
+    }
+
+    public int getRight() {
+        return right;
+    }
+
+    public void setRight(int right) {
+        this.right = right;
+    }
+
+    public int getnItems() {
+        return nItems;
+    }
+
+    public void setnItems(int nItems) {
+        this.nItems = nItems;
+    }
+
+    public int getMaxSize() {
+        return maxSize;
+    }
+
+    public void setMaxSize(int maxSize) {
+        this.maxSize = maxSize;
+    }
+
+    public long[] getDeqArr() {
+        return deqArr;
+    }
+
+    public void setDeqArr(long[] deqArr) {
+        this.deqArr = deqArr;
     }
 }
 
