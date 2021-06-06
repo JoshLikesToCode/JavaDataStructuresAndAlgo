@@ -20,7 +20,7 @@ public class StackXDeque {
     {
         if(this.nItems == max_size)
         {
-            System.out.println("StackXQueue is full.");
+            System.out.println("StackXDequeue is full.");
             return false;
         }
         deque.insertRight(val);
@@ -32,12 +32,28 @@ public class StackXDeque {
     {
         if(this.nItems == 0)
         {
-            System.out.println("StackXQueue is empty.");
+            System.out.println("StackXDequeue is empty.");
             return false;
         }
         deque.removeRight();
         nItems--;
         return true;
+    }
+
+    public boolean peak()
+    {
+        if(this.nItems == 0)
+        {
+            System.out.println("StackXDequeue is empty, nothing to peak.");
+            return false;
+        }
+        System.out.println("Peaking " + deque.getDeqArrAtIndex(deque.getRight()));
+        return true;
+    }
+
+    public boolean isEmpty()
+    {
+        return nItems == 0;
     }
 }
 
@@ -45,16 +61,30 @@ class StackXDequeApp {
     public static void main(String[] args) {
         StackXDeque sxd = new StackXDeque(5);
         sxd.push(5);
+        sxd.peak();
         sxd.push(10);
+        sxd.peak();
         sxd.push(11);
+        sxd.peak();
         sxd.push(12);
+        sxd.peak();
         sxd.push(66);
+        sxd.peak();
         sxd.push(444);
+        System.out.println("Is the StackXDeque empty? " + sxd.isEmpty());
+        sxd.peak();
         sxd.pop();
+        sxd.peak();
         sxd.pop();
+        sxd.peak();
         sxd.pop();
+        sxd.peak();
         sxd.pop();
+        sxd.peak();
         sxd.pop();
+        sxd.peak();
         sxd.pop();
+        sxd.peak();
+        System.out.println("Is the StackXDeque empty? " + sxd.isEmpty());
     }
 }

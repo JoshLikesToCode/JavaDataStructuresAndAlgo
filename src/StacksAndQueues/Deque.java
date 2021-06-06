@@ -155,6 +155,11 @@ public class Deque {
         return deqArr;
     }
 
+    public long getDeqArrAtIndex(int index)
+    {
+        return deqArr[index];
+    }
+
     public void setDeqArr(long[] deqArr) {
         this.deqArr = deqArr;
     }
