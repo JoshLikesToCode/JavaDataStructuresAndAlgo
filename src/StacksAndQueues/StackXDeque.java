@@ -5,44 +5,39 @@ package StacksAndQueues;
  * This stack class should have the same methods and capabilities as the StackX class in the textbook.
  * The StackX class had the following methods: push(), pop(), peek(), isEmpty()
  */
-public class StackXDeque extends Deque {
-
-    public StackXDeque(int s) {
-        super(s);
+public class StackXDeque {
+    static Deque deque;
+    int max_size;
+    int nItems;
+    public StackXDeque(int s)
+    {
+        deque = new Deque(s);
+        max_size = s;
+        nItems = 0;
     }
 
-    public void push(long val)
+    public boolean push(int val)
     {
-        if(super.isFull())
+        if(this.nItems == max_size)
         {
-            System.out.println("StackXDeque is full.");
-            return;
+            System.out.println("StackXQueue is full.");
+            return false;
         }
-        super.insertLeft(val);
+        deque.insertRight(val);
+        nItems++;
+        return true;
     }
 
     public boolean pop()
     {
-        //System.out.println(super.getRight());
-        //System.out.println(super.getLeft());
-        if(isEmpty())
+        if(this.nItems == 0)
         {
-            System.out.println("StackXDeque is empty.");
+            System.out.println("StackXQueue is empty.");
             return false;
         }
-
-
-        // need to figure out below
-        else if(super.getRight() < 0)
-        {
-            super.removeLeft();
-            return true;
-        }
-        else
-        {
-            super.removeRight();
-            return true;
-        }
+        deque.removeRight();
+        nItems--;
+        return true;
     }
 }
 
@@ -55,6 +50,9 @@ class StackXDequeApp {
         sxd.push(12);
         sxd.push(66);
         sxd.push(444);
+        sxd.pop();
+        sxd.pop();
+        sxd.pop();
         sxd.pop();
         sxd.pop();
         sxd.pop();
